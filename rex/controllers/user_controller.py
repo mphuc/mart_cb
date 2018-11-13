@@ -30,7 +30,6 @@ import urllib2
 import base64
 import onetimepass
 import sys
-import nexmo
 import requests
 from bitcoinrpc.authproxy import AuthServiceProxy, JSONRPCException
 sys.setrecursionlimit(10000)
