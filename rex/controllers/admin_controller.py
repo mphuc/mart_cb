@@ -621,7 +621,7 @@ def AdminAddCustomerSubmit():
             'fullname' : fullname,
             'monthly' : monthly,
             'date_added' : datetime.utcnow(),
-            'date_finish' : datetime.utcnow() + timedelta(days=35)
+            'date_finish' : datetime.utcnow() + timedelta(days=30)
         }
         db.deposits.insert(data_deposit)
         FnRefferalProgram(customer_id,package)
@@ -689,7 +689,7 @@ def ActiveInvestSubmit(customer_id):
             'fullname' : customer['name'],
             'date_added' : datetime.utcnow(),
             'monthly' : monthly,
-            'date_finish' : datetime.today() + timedelta(days=35)
+            'date_finish' : datetime.today() + timedelta(days=30)
         }
         db.deposits.insert(data_deposit)
         FnRefferalProgram(customer_id,package)
@@ -871,7 +871,7 @@ def ThayDoiNgaySubmit(_id):
 
 
     date_addeds = datetime.strptime(date_added, '%Y-%m-%d %H:%M:%S')
-    date_finish =  datetime.strptime(date_added, '%Y-%m-%d %H:%M:%S') + timedelta(days=35)
+    date_finish =  datetime.strptime(date_added, '%Y-%m-%d %H:%M:%S') + timedelta(days=30)
 
     db.deposits.update({ "_id" : ObjectId(_id) }, { '$set': {
             'date_added' :date_addeds,
